@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const WebpackNotifierPlugin = require('webpack-notifier');
+const FlowBabelWebpackPlugin = require('flow-babel-webpack-plugin');
 
 const rootPath = __dirname;
 let srcPath = path.resolve(rootPath, './src');
@@ -37,18 +38,7 @@ module.exports = function(env, args) {
                     test: /\.js$/,
                     exclude: /(node_modules)/,
                     use: {
-                        loader: 'babel-loader',
-                        options: {
-                            presets: [
-                                'react',
-                                ['env', {
-                                    targets: {
-                                        browsers: ['last 5 versions']
-                                    }
-                                }]
-                            ],
-                            plugins: ['transform-runtime']
-                        }
+                        loader: 'babel-loader'
                     }
                 }
             ]
@@ -60,7 +50,8 @@ module.exports = function(env, args) {
             new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
             new webpack.DefinePlugin({
                 'process.env.NODE_ENV': JSON.stringify(isProd ? 'production' : '')
-            })
+            }),
+            new FlowBabelWebpackPlugin()
         ]
     };
 

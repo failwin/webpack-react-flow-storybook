@@ -1,7 +1,11 @@
+// @flow
+import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import { App } from './App';
 
-ReactDOM.render(
-    <App />,
-    document.getElementById('root')
-);
+const elem = document.getElementById('root');
+if (!elem) {
+    throw 'No "root" element';
+}
+
+ReactDOM.render(<App />, elem);

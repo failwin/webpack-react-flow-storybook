@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "babel-preset-flow": "^6.23.0",
     "babel-runtime": "^6.26.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
@@ -14,6 +15,8 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "flow-babel-webpack-plugin": "^1.1.1",
+    "flow-bin": "^0.63.1",
     "webpack": "^3.10.0",
     "webpack-notifier": "^1.5.0"
   },
@@ -22,6 +25,7 @@
     "build": "yarn run webpack",
     "build:prod": "yarn run webpack --env.production",
     "webpack": "./node_modules/.bin/webpack --config webpack.config.js --progress",
+    "flow": "./node_modules/.bin/flow",
     "test": "./scripts/.bin/karma start ./tests/unit_tests/karma.conf.js",
     "test:watch": "./scripts/.bin/karma start ./tests/unit_tests/karma.conf.js --auto-watch --no-single-run",
     "test:ci": "scripts\\.bin\\karma start ./tests/unit_tests/karma.conf.js --testForCi",

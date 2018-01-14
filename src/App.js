@@ -1,6 +1,14 @@
+// @flow
+
 import React from 'react';
 
-export default class App extends React.Component {
+function test(a: number) {
+    return a + 10;
+}
+const a = test(2);
+console.log(a);
+
+export class App extends React.Component<{}> {
 
     render() {
         return (
