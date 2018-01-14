@@ -14,7 +14,6 @@ module.exports = function(env, args) {
     const webVersion = (args && args.webVersion) || '';
     const addCoverage = (args && args.addCoverage) || false;
     const addSourceMap = (args && args.addSourceMap) || true;
-    const addStylesSourceMap = false;
 
     const config = {
         entry: {
@@ -69,7 +68,7 @@ module.exports = function(env, args) {
         config.devtool = false;
     }
     else {
-        config.devtool = (addStylesSourceMap ? 'inline-cheap-module-source-map' : '#eval');
+        config.devtool = 'inline-cheap-module-source-map';
         config.profile = true;
     }
 
