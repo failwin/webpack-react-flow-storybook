@@ -5,7 +5,7 @@ import { App } from './App';
 
 const elem = document.getElementById('root');
 if (!elem) {
-    throw 'No "root" element';
+    throw new Error('No "root" element');
 }
 
-ReactDOM.render(<App />, elem);
+ReactDOM.render(React.createElement(App, null), elem);

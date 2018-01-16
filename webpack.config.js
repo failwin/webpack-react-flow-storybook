@@ -30,12 +30,12 @@ module.exports = function(env, args) {
                 'src/',
                 'node_modules'
             ],
-            extensions: ['.webpack.js', '.web.js', '.js', '.js6', '.js7']
+            extensions: ['.js', '.jsx']
         },
         module: {
             rules: [
                 {
-                    test: /\.js$/,
+                    test: /\.(js|jsx)$/,
                     exclude: /(node_modules)/,
                     use: {
                         loader: 'babel-loader'
@@ -70,7 +70,7 @@ module.exports = function(env, args) {
         }
         if (addCoverage) {
             config.module.rules.push({
-                test: /\.js$/,
+                test: /\.(js|jsx)$/,
                 include: srcPath,
                 exclude: [
                     path.join(srcPath, '3rd-parties')
