@@ -1,4 +1,5 @@
 node_modules/
 .idea/
 bin/js/
+styleguide/
 yarn-error*.log
